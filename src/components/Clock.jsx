@@ -5,10 +5,9 @@ class Clock extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            date: new Date(),
+            date:new Date(),
         };
     }
-
     render(){
       return(
       <div>
@@ -20,23 +19,22 @@ class Clock extends React.Component{
 
     componentDidMount(){
         console.log('componentDidMount');
-        this.timerId = setInterval(() => this.tick(), 1000);
+        this.tomeId = setInterval(() => this.tick(), 1000);
     }
 
     componentDidUpdate(){
         console.log('componentDidUpdate');
     }
-    
-    componentWillUnmount(){
-        console.log('componentWillUnmount');
+
+    componentWilUnmount(){
         clearInterval(this.timerId);
     }
 
     tick(){
         this.setState({
-            date: new Date(),
+            date:new Date(),
         });
     }
-}
+  }
 
-export default Clock;
+  export default Clock;
